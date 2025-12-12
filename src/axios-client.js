@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "http://localhost:8000/api", // L'adresse de votre Laravel
+  baseURL: (process.env.REACT_APP_API_URL || "http://localhost:8000") + "/api", // L'adresse de votre Laravel
 });
 
 // Intercepteur pour ajouter le Token automatiquement
